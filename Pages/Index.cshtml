@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="row">
+    <div class="col">
+        <h1 class="display-4">Ask your own data questions!</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <p>This chatbot knows about Hobbits and Super Mario, but not much else - ask away!</p>
+        <form asp-page="Index" class="form">
+            <div class="form-group mb-3">
+                <label for="name">Question</label>
+                <input type="text" asp-for="@Model.Question" class="form-control" />
+            </div>
+            <input type="submit" class="btn btn-primary" />
+        </form>
+        <hr />
+        <p>@Model.ResponseContent</p>
+    </div>
+</div>
+
